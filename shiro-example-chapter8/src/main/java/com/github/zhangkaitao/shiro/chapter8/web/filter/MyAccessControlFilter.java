@@ -11,6 +11,13 @@ import javax.servlet.ServletResponse;
  * <p>Version: 1.0
  */
 public class MyAccessControlFilter extends AccessControlFilter {
+
+    @Override
+    protected boolean preHandle(ServletRequest request, ServletResponse response) throws Exception {
+        System.out.println("HeiHei in access control pre handle");
+        return super.preHandle(request, response);
+    }
+
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
         System.out.println("access allowed");

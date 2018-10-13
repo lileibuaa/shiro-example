@@ -5,10 +5,9 @@
  */
 package org.apache.shiro.session.mgt;
 
+import javax.servlet.http.HttpServletRequest;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.web.session.mgt.WebSessionContext;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 创建自定义的session，
@@ -22,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class OnlineSessionFactory implements SessionFactory {
 
-    @Override
     public Session createSession(SessionContext initData) {
         OnlineSession session = new OnlineSession();
         if (initData != null && initData instanceof WebSessionContext) {

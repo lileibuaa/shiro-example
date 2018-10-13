@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <properties>
+    <property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss,SSS}{faint} %style{[%-5level]}{magenta} -- [%thread] %style{%C}{Green}.%style{[%M]}{yellow} [%L]: %msg%n</property>
+  </properties>
+
+  <appenders>
+    <Console name="Console" target="system_out">
+      <PatternLayout pattern="${PATTERN}"/>
+    </Console>
+  </appenders>
+
+  <loggers>
+    <!--watson controller请求日志   eg.#additivity false 中止了log请求向上级传播-->
+    <asyncLogger name="AccessLog" level="info" includeLocation="true" >
+      <appenderref ref="Console"/>
+    </asyncLogger>
+    <asyncRoot level="info" includeLocation="true">
+      <appenderref ref="Console"/>
+    </asyncRoot>
+  </loggers>
+</configuration>

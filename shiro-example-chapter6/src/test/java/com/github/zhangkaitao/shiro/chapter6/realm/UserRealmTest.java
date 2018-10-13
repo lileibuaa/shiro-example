@@ -18,7 +18,7 @@ public class UserRealmTest extends BaseTest {
 
     @Test
       public void testLoginSuccess() {
-        login("classpath:shiro.ini", u1.getUsername(), password);
+        login("classpath:shiro.ini", u1.getUsername(), password + 111);
         Assert.assertTrue(subject().isAuthenticated());
     }
 
